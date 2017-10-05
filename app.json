@@ -2,7 +2,7 @@
   "name": "chukoapp",
   "description": "Chuko App",
   "scripts": {
-    "postdeploy": "bin/heroku_postdeploy.sh"
+    "postdeploy": "bin/postdeploy.sh"
   },
   "env": {
     "SECRET_KEY": {
