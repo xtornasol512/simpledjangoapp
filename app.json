@@ -22,7 +22,6 @@
   },
   "addons": [
     "papertrail",
-    "redistogo:nano",
     "heroku-postgresql"
   ],
   "buildpacks": [
