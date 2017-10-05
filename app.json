@@ -13,6 +13,9 @@
     },
     "PRODUCTION": {
       "required": true
+    },
+    "DJANGO_SETTINGS_MODULE": {
+      "required": true
     }
   },
   "formation": {
