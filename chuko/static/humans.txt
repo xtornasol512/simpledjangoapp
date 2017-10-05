@@ -1,0 +1,2 @@
+* Dev: @xtornasol512
+* Tags: Python, Django, Heroku
