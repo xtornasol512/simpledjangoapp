@@ -26,6 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = ast.literal_eval(os.environ['DEBUG_STATE'])
+PRODUCTION = ast.literal_eval(os.environ['PRODUCTION'])
 
 ALLOWED_HOSTS = ['*']
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'chuko.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,8 +86,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-if not DEBUG:
-    DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
+
+DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

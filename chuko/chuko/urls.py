@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from home.views import home
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', home, name='home')
 ]
+
+handler400 = 'chuko.views.bad_request'
+handler403 = 'chuko.views.permission_denied'
+handler404 = 'chuko.views.page_not_found'
+handler500 = 'chuko.views.server_error'
